@@ -14,7 +14,7 @@
 <script>
 import Web3 from 'web3'
 import Contract from 'web3-eth-contract'
-import Abi from '../web3/ABI.json'
+import Abi from '../web3/abi.json'
 
 import DoggiesSearchForm from './DoggiesSearchForm.vue'
 import DoggiesDetails from './DoggiesDetails.vue'
