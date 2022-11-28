@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <DoggiesSearchForm @doggieToken="onSearchDoggies($event)" />
     <DoggiesSearchForm
       @doggieToken="onSearchDoggies($event)"
       @randomDoggieToken="onSearchDoggies($event)"
@@ -33,15 +32,18 @@ export default {
   },
   methods: {
     onSearchDoggies(doggieToken) {
-      // Handler for search doggies using Web3
+      // Configure Http Provider
       const web3Provider = new Web3.providers.HttpProvider(
         'https://bold-flashy-night.ethereum-goerli.discover.quiknode.pro/31af13c3a582d03c270b12b712c384a1bd602f0a/'
       )
-      // set provider for all later instances to use
+      // Set provider for all later instances to use
       Contract.setProvider(web3Provider)
       const SmartContractAddress = '0xc7df86762ba83f2a6197e1ff9bb40ae0f696b9e6'
+
+      // Create Contract Instance
       const contract = new Contract(Abi, SmartContractAddress)
 
+      // Call Contract Method to find Doggies
       contract.methods.totalSupply().call(function (err, res) {
         if (err) {
           // eslint-disable-next-line no-console
