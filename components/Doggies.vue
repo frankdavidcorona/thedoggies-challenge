@@ -1,6 +1,10 @@
 <template>
   <div class="container">
     <DoggiesSearchForm @doggieToken="onSearchDoggies($event)" />
+    <DoggiesSearchForm
+      @doggieToken="onSearchDoggies($event)"
+      @randomDoggieToken="onSearchDoggies($event)"
+    />
 
     <div v-if="Object.keys(doggie).length">
       <DoggiesDetails :doggie="doggie" />

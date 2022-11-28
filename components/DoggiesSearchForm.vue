@@ -13,6 +13,11 @@ export default {
       }
     },
 
+    onSearchRandomDoggies() {
+      // TODO: Define random Doggie Token based on...
+      this.$emit('randomDoggieToken', Math.floor(Math.random() * 1000))
+    },
+
     clearDoggieToken() {
       this.doggieToken = ''
     },
@@ -45,7 +50,9 @@ export default {
           Search
         </button>
         <!-- Random search for doggies -->
-        <button class="btn btn__primary">I'm Feeling Lucky</button>
+        <button class="btn btn__primary" @click="onSearchDoggies">
+          I'm Feeling Lucky
+        </button>
       </div>
     </div>
   </div>
