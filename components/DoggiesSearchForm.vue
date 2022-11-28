@@ -23,7 +23,6 @@ export default {
 <template>
   <div class="container">
     <div class="container__item">
-      <div class="container__label">Token ID</div>
       <form class="form" @submit.prevent="onSearchDoggies">
         <input
           id="doggieToken"
