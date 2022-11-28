@@ -34,11 +34,11 @@ export default {
     onSearchDoggies(doggieToken) {
       // Configure Http Provider
       const web3Provider = new Web3.providers.HttpProvider(
-        'https://bold-flashy-night.ethereum-goerli.discover.quiknode.pro/31af13c3a582d03c270b12b712c384a1bd602f0a/'
+        process.env.HOST_HTTP_PROVIDER
       )
       // Set provider for all later instances to use
       Contract.setProvider(web3Provider)
-      const SmartContractAddress = '0xc7df86762ba83f2a6197e1ff9bb40ae0f696b9e6'
+      const SmartContractAddress = process.env.SMART_CONTRACT_ADDRESS
 
       // Create Contract Instance
       const contract = new Contract(Abi, SmartContractAddress)
