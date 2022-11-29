@@ -14,8 +14,8 @@ export default {
     },
 
     onSearchRandomDoggies() {
-      // TODO: Define random Doggie Token based on...
-      this.$emit('randomDoggieToken', Math.floor(Math.random() * 1000))
+      // ** Generate random Doggie ID and emitt it to the parent component
+      this.$emit('randomDoggieToken', Math.random().toString(36).substr(2))
     },
 
     clearDoggieToken() {
@@ -50,7 +50,7 @@ export default {
           Search
         </button>
         <!-- Random search for doggies -->
-        <button class="btn btn__primary" @click="onSearchDoggies">
+        <button class="btn btn__primary" @click="onSearchRandomDoggies">
           I'm Feeling Lucky
         </button>
       </div>
